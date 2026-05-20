@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Face | Modeling Competition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Vogue & Vision - The ultimate destination for modeling business insights and high-fashion editorials.">
+</head>
+<body>
+
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2>Application Received</h2>
+            <p>Our scouts will review your portfolio. Keep an eye on your inbox.</p>
+            <button onclick="closeSuccess()">Back to Site</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">PFN</div>
+        
+        <ul class="nav-links nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#contestants-votes">Contestants-votes</a></li>
+            <li><a href="#elite-cta-container">Vote</a></li>
+        </ul>
+    
+        <div class="nav-actions">
+            <button class="cta-btn hide-mobile" onclick="document.getElementById('apply').scrollIntoView()">Join Roster</button>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>PRESTIGE FACE NIGERIA</h1>
+            <p>Showcasing Nigeria’s Finest Faces...</p>
+            <a href="#elite-cta-container" class="btn">Vote</a>
+        </div>
+    </header>
+
+    <section id="contestants-votes" class="container">
+        <h2 class="section-title">Live Contestant Standings</h2>
+        <p class="form-subtitle" style="text-align: center; margin-bottom: 30px;">
+            Click on any contestant's portrait to view their verified vote counts.
+        </p>
+        
+        <div class="model-grid">
+           <!-- Contestant 1 -->
+<div class="model-card contestant-card" onclick="openPortfolio('Lunmzy', 'Contestant 01', '0', 'contestant\ 01.png')">
+    <div class="model-img" style="background-image: url('contestant\ 01.png');"></div>
+    <div class="model-info"><span>Contestant 01</span></div>
+</div>
+
+<!-- Contestant 2 -->
+<div class="model-card contestant-card" onclick="openPortfolio('Kelvin', 'Contestant 02', '0', 'contestant\ 02.png')">
+    <div class="model-img" style="background-image: url('contestant\ 02.png');"></div>
+    <div class="model-info"><span>Contestant 02</span></div>
+</div>
+
+        <!-- Contestant 2 -->
+        <div class="model-card contestant-card" onclick="openPortfolio('Alpha', 'Contestant 04', '0', 'contestant\ 04.png')">
+            <div class="model-img" style="background-image: url('contestant\ 04.png');"></div>
+            <div class="model-info"><span>Contestant 04</span></div>
+        </div>
+
+                   <!-- Contestant 1 -->
+<div class="model-card contestant-card" onclick="openPortfolio('Oluwaseun', 'Contestant 05', '0', 'contestant\ 05.png')">
+    <div class="model-img" style="background-image: url('contestant\ 05.png');"></div>
+    <div class="model-info"><span>Contestant 05</span></div>
+</div>
+
+           <!-- Contestant 1 -->
+           <div class="model-card contestant-card" onclick="openPortfolio('Chiii', 'Contestant 07', '0', 'contestant\ 07.png')">
+            <div class="model-img" style="background-image: url('contestant\ 07.png');"></div>
+            <div class="model-info"><span>Contestant 07</span></div>
+        </div>
+        
+        <!-- Contestant 2 -->
+        <div class="model-card contestant-card" onclick="openPortfolio('Marveey', 'Contestant 08', '0', 'contestant\ 08.png')">
+            <div class="model-img" style="background-image: url('contestant\ 08.png');"></div>
+            <div class="model-info"><span>Contestant 08</span></div>
+        </div>
+                   <!-- Contestant 1 -->
+<div class="model-card contestant-card" onclick="openPortfolio('TT', 'Contestant 09', '0', 'contestant\ 09.png')">
+    <div class="model-img" style="background-image: url('contestant\ 09.png');"></div>
+    <div class="model-info"><span>Contestant 09</span></div>
+</div>
+
+<!-- Contestant 2 -->
+<div class="model-card contestant-card" onclick="openPortfolio('Ogooluwa', 'Contestant 10', '0', 'contestant\ 10.png')">
+    <div class="model-img" style="background-image: url('contestant\ 10.png');"></div>
+    <div class="model-info"><span>Contestant 10</span></div>
+</div>
+
+           <!-- Contestant 1 -->
+           <div class="model-card contestant-card" onclick="openPortfolio('Precious', 'Contestant 11', '0', 'contestant\ 11.png')">
+            <div class="model-img" style="background-image: url('contestant\ 11.png');"></div>
+            <div class="model-info"><span>Contestant 11</span></div>
+        </div>
+        
+        <!-- Contestant 2 -->
+        <div class="model-card contestant-card" onclick="openPortfolio('Boluwatife', 'Contestant 12', '0', 'contestant\ 12.png')">
+            <div class="model-img" style="background-image: url('contestant\ 12.png');"></div>
+            <div class="model-info"><span>Contestant 12</span></div>
+        </div>
+
+<!-- Contestant 1 -->
+<div class="model-card contestant-card" onclick="openPortfolio('Promise', 'Contestant 13', '0', 'contestant\ 13.png')">
+    <div class="model-img" style="background-image: url('contestant\ 13.png');"></div>
+    <div class="model-info"><span>Contestant 13</span></div>
+</div>
+
+        </div>
+    </section>
+
+    <section id="elite-cta-container">
+        <div class="elite-card">
+            <div class="elite-content">
+                <h2>Vote for your desired contestants.</h2>
+                <p>Voting fee: ₦20 per vote</p>
+            </div>
+            
+            <!-- This is the button that links to your new payment page -->
+            <a href="payment.html" class="payment-trigger-btn">
+                Proceed to Payment & Upload
+            </a>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">PFN</div>
+            <p>© 2026 Prestige Face Nigeria. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/prestigefaceng?igsh=MWJmajRianQxbjFodw==" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+            </div>
+
+            <div class="newsletter">
+    <form action="https://formspree.io/f/mkooqeqb" method="POST" class="newsletter-form">
+        <div class="notification">
+        <p>Want to get notified about the next upcoming PFN competition?</p>
+        <input type="email" name="subscriber_email" placeholder="E-mail Address" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Contestant Profile & Voting Modal -->
+<div id="portfolioModal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000;">
+    <div class="modal-content" style="background: #111; color: #fff; padding: 30px; border-radius: 8px; max-width: 500px; width: 90%; position: relative; text-align: center; border: 1px solid #333;">
+        <!-- Close Button -->
+        <span onclick="closePortfolio()" style="position: absolute; top: 15px; right: 20px; font-size: 2rem; cursor: pointer; color: #aaa;">&times;</span>
+        
+        <!-- Contestant Image Display -->
+        <div id="modalImg" style="width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 20px; border: 2px solid #d4af37;"></div>
+        
+        <!-- Dynamic Text Data -->
+        <h2 id="modalName" style="font-family: 'Playfair Display', serif; margin-bottom: 5px;">---</h2>
+        <p id="contestantId" style="color: #888; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 20px;">---</p>
+        
+        <div style="background: #1a1a1a; padding: 15px; border-radius: 6px; margin-bottom: 25px; border-left: 4px solid #d4af37;">
+            <p style="margin: 0; font-size: 0.9rem; color: #aaa;">Verified Live Standings</p>
+            <p style="margin: 5px 0 0; font-size: 1.8rem; font-weight: bold; color: #d4af37;"><span id="modalVotes">0</span> <span style="font-size: 1rem; color: #fff; font-weight: normal;">Votes</span></p>
+        </div>
+        
+        <p style="font-size: 0.85rem; color: #777; line-height: 1.5; margin-bottom: 20px;">
+            Votes are audited and updated automatically upon confirmation of payment handling.
+        </p>
+
+        <!-- CTA Action Back to Payment -->
+        <a href="payment.html" class="payment-trigger-btn" style="display: inline-block; background: #d4af37; color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 4px; width: 100%; box-sizing: border-box;">
+            Cast Votes (₦20/ea)
+        </a>
+    </div>
+</div>
+    <!-- Terms and Conditions Modal -->
+<div id="termsModal" class="modal" style="display: none; align-items: center; justify-content: center;">
+    <div class="modal-content terms-container">
+        <div class="terms-scroll-box">
+            <h2>TERMS AND CONDITIONS</h2>
+<p><strong>Prestige Face Nigeria (Online Competition)</strong></p>
+<hr>
+
+<h3>1. Introduction</h3>
+<p>By participating, voting, or accessing this platform, you agree to comply with and be bound by these Terms and Conditions. Please read them carefully before processing any financial transactions.</p>
+
+<h3>2. Eligibility</h3>
+<ul>
+    <li>Participants must be between 16 and 28 years old.</li>
+    <li>Participants must provide accurate and complete registration details.</li>
+    <li>By entering, you confirm that all submitted content is your original work.</li>
+</ul>
+
+<h3>3. Voting Structure & Fees</h3>
+<ul>
+    <li><strong>Cost per Vote:</strong> Each verified public vote costs exactly <strong>₦20 (Twenty Nigerian Naira)</strong>.</li>
+    <li><strong>Voting Limits:</strong> Voters may cast as many votes as they desire. There is no maximum limit to the number of votes an individual can purchase for a contestant.</li>
+    <li><strong>Processing Time:</strong> Votes will be credited to the specified contestant's live standings automatically upon payment gateway verification.</li>
+</ul>
+
+<h3>4. Strict No-Refund Policy</h3>
+<blockquote>
+    <strong>CRITICAL NOTICE:</strong> All voting transactions are final. Under no circumstances will payments be returned, reversed, or refunded, regardless of technical entry issues, voter error, contestant disqualification, or withdrawal from the competition. By completing a payment, you wave any right to a refund.
+</blockquote>
+
+<h3>5. Competition Structure</h3>
+<p>The competition will be conducted in multiple stages, including photo submissions, video challenges, public voting, and judges’ evaluation.</p>
+
+<h3>6. Submission Guidelines</h3>
+<p>All photos/videos must be clear. Edited, misleading, or inappropriate content will lead to immediate disqualification.</p>
+
+<h3>7. Voting Integrity & Fair Play</h3>
+<p>Any form of artificial vote manipulation, including the use of automated scripts, bots, or fake payment profiles, will result in the immediate deduction of votes and disqualification of the associated contestant.</p>
+
+<h3>8. Use of Content</h3>
+<p>Participants grant Prestige Face Nigeria the right to use submitted content for promotional purposes without additional compensation.</p>
+
+<h3>9. Disqualification</h3>
+<p>False information, fraudulent financial activity, or inappropriate behavior will result in removal from the competition roster.</p>
+
+<hr>
+<p><em>By clicking "I Agree & Enter Site", you acknowledge that you have read, understood, and accept the ₦20 per vote terms and the all-sales-final non-refundable policy.</em></p>
+        </div> 
+        <div class="terms-footer">
+            <button class="submit-btn" onclick="acceptTerms()">I Agree & Enter Site</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
