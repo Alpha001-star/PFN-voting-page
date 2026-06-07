@@ -3,170 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting Portal Closed</title>
+    <title>Secure Payment | Prestige Face Nigeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles matching Prestige Face Nigeria */
+        :root {
+            --prestige-gold: #00A86B;
+            --prestige-gold-dark: #028e5b;
+            --deep-black: #0f0f0f;
+            --pure-white: #ffffff;
+            --soft-gray: #f4f4f4;
+            --border-color: #e0e0e0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background: #000000; /* Deep primary black */
-            color: #ffffff;
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--soft-gray);
+            color: var(--deep-black);
+            line-height: 1.6;
+        }
+
+        /* Professional Header */
+        .top-navbar {
+            background: white;
+            padding: 15px 5%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            overflow: hidden;
-            position: relative;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        /* Ambient background glow utilizing the brand theme colors */
-        body::before {
-            content: '';
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: rgba(197, 160, 89, 0.08); /* Soft gold aura */
-            filter: blur(120px);
-            top: 15%;
-            left: 10%;
-            border-radius: 50%;
-            z-index: 1;
+        .brand-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: #028e5b;
+            text-decoration: none;
         }
 
-        body::after {
-            content: '';
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: rgba(26, 26, 26, 0.6);
-            filter: blur(100px);
-            bottom: 15%;
-            right: 10%;
-            border-radius: 50%;
-            z-index: 1;
+        .exit-btn {
+            text-decoration: none;
+            color: #028e5b;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s;
         }
 
-        /* Container Card matching elite-card styles */
-        .closed-portal-card {
-            background: linear-gradient(135deg, #111111 0%, #050505 100%);
-            border: 1px solid #c5a059; /* Elite Gold Border */
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 50px 40px;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 550px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 160, 89, 0.1);
-            z-index: 10;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .exit-btn:hover {
+            background: #eee;
+            color: var(--deep-black);
         }
 
-        /* Icon Container with brand gold treatment */
-        .icon-container {
-            width: 80px;
-            height: 80px;
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 28px;
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.15);
+        /* Main Container */
+        .checkout-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
         }
 
-        .icon-container svg {
-            width: 32px;
-            height: 32px;
-            fill: #c5a059; /* Brand Elite Gold */
+        /* Payment Card */
+        .white-card {
+            background: white;
+            border-radius: 4px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* Typography */
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 16px;
+        .section-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--soft-gray);
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 600;
+            color: var(--prestige-gold-dark);
         }
 
-        p {
-            font-size: 0.95rem;
-            color: #888888; /* Elite paragraph gray */
-            line-height: 1.7;
+        /* Bank Info Box */
+        .bank-details-container {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
 
-        /* Highlight elements styling */
-        .highlight-gold {
-            color: #c5a059;
+        .label-text {
+            font-size: 0.75rem;
+            color: #028e5b;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .value-text {
             font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Decorative Gold Divider Line */
-        .divider-line {
+        .copy-link {
+            color: var(--prestige-gold);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Form Inputs */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], 
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--deep-black);
+            color: white;
+            padding: 18px;
             border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #c5a059, transparent);
-            margin: 20px auto 28px;
-            width: 70%;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        /* Entrance Animation */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .submit-btn:hover {
+            background: var(--prestige-gold);
         }
 
-        /* Responsive scaling adjustments */
+        /* Summary Sidebar */
+        .order-summary {
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            height: fit-content;
+            border-top: 4px solid var(--prestige-gold);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .total-price {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--soft-gray);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Helper Classes */
+        .hidden { display: none; }
+        .animate-in { animation: slideUp 0.5s ease forwards; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 768px) {
-            .closed-portal-card {
-                padding: 40px 25px;
-                margin: 10px;
-            }
-            h1 {
-                font-size: 1.75rem;
-            }
-            p {
-                font-size: 0.9rem;
-            }
+            .checkout-wrapper { grid-template-columns: 1fr; }
+            .order-summary { order: -1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="closed-portal-card">
-        <!-- Secure Closed Lock SVG Asset -->
-        <div class="icon-container">
-            <svg viewBox="0 0 24 24">
-                <path d="M18,8H17V6A5,5,0,0,0,7,6V8H6a3,3,0,0,0-3,3V19a3,3,0,0,0,3,3H18a3,3,0,0,0,3-3V11A3,3,0,0,0,18,8ZM9,6a3,3,0,0,1,6,0V8H9ZM19,19a1,1,0,0,1-1,1H6a1,1,0,0,1-1-1V11a1,1,0,0,1,1-1H18a1,1,0,0,1,1,1Z"/>
-            </svg>
-        </div>
+    <nav class="top-navbar">
+        <a href="#" class="brand-logo">PRESTIGE FACE</a>
+        <a href="main.html" class="exit-btn">Exit Registration</a>
+    </nav>
 
-        <h1>Portal Closed</h1>
-        <div class="divider-line"></div>
-        
-        <p>We sincerely apologize, but the voting portal is now officially closed.</p>
-        
-        <p>No further transactions or votes can be accepted at this stage. Thank you all for your participation, support, and cooperation throughout the competition. <span class="highlight-gold">✨</span></p>
-    </div>
+    <div class="checkout-wrapper">
+        <main class="white-card">
+            
+            <!-- STEP 1 -->
+            <div id="step1" class="animate-in">
+                <div class="section-header">
+                    <span class="step-title">Step 01: Secure Transfer</span>
+                </div>
+                <p style="margin-bottom: 20px; font-size: 0.95rem; color: #555;">
+                    To complete your registration, please make a transfer of <strong>₦2,000</strong> to the official account below.
+                </p>
+
+                <div class="bank-details-container">
+                    <p class="label-text">Bank Name</p>
+                    <p class="value-text">OPay Digital Bank</p>
+
+                    <p class="label-text">Account Number</p>
+                    <div class="value-text">
+                        <span id="accNum">8147321588</span>
+                        <span class="copy-link" onclick="copyNum()">Copy Number</span>
+                    </div>
+
+                    <p class="label-text">Account Name</p>
+                    <p class="value-text" style="margin-bottom:0;">PRESTIGE FACE NIGERIA</p>
+                </div>
+
+                <button class="submit-btn" onclick="nextStep()">I Have Made Payment</button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div id="step2" class="hidden">
+                <div class="section-header">
+                    <span class="step-title">Step 02: Verification Details</span>
+                </div>
+                
+                <p>Please ensure you send the receipt to your contestant so as he/she can forward it to us for proper documentation</p>
+            </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log("Portal status verified: Transaction handling disabled.");
-        });
+        function copyNum() {
+            const num = document.getElementById('accNum').innerText;
+            navigator.clipboard.writeText(num);
+            const link = document.querySelector('.copy-link');
+            link.innerText = "Copied!";
+            setTimeout(() => { link.innerText = "Copy Number"; }, 2000);
+        }
+
+        function nextStep() {
+            const s1 = document.getElementById('step1');
+            const s2 = document.getElementById('step2');
+            
+            s1.style.opacity = '0';
+            setTimeout(() => {
+                s1.classList.add('hidden');
+                s2.classList.remove('hidden');
+                s2.classList.add('animate-in');
+            }, 300);
+        }
     </script>
 </body>
 </html>
