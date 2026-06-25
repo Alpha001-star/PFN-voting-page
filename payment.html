@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Payment | Prestige Face Nigeria</title>
+    <title>Voting Closed | Prestige Face Nigeria</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -26,6 +26,9 @@
             background-color: var(--soft-gray);
             color: var(--deep-black);
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Professional Header */
@@ -67,144 +70,71 @@
         }
 
         /* Main Container */
-        .checkout-wrapper {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 30px;
+        .closed-wrapper {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            width: 100%;
         }
 
-        /* Payment Card */
+        /* Status Card */
         .white-card {
             background: white;
             border-radius: 4px;
-            padding: 40px;
+            padding: 50px 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--prestige-gold);
+            animation: slideUp 0.5s ease forwards;
+        }
+
+        .status-icon {
+            font-size: 3rem;
+            color: #d9534f; /* Muted Red Alert */
+            margin-bottom: 20px;
         }
 
         .section-header {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 2px solid var(--soft-gray);
         }
 
-        .step-title {
-            font-size: 1.1rem;
+        .status-title {
+            font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 600;
-            color: var(--prestige-gold-dark);
+            font-weight: 700;
+            color: var(--deep-black);
         }
 
-        /* Bank Info Box */
-        .bank-details-container {
-            background: #fafafa;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        .notice-text {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #555;
         }
 
-        .label-text {
-            font-size: 0.75rem;
-            color: #028e5b;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .value-text {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .copy-link {
-            color: var(--prestige-gold);
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        /* Form Inputs */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        input[type="text"], 
-        input[type="file"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .submit-btn {
-            width: 100%;
+        .home-btn {
+            display: inline-block;
+            text-decoration: none;
             background: var(--deep-black);
             color: white;
-            padding: 18px;
-            border: none;
+            padding: 15px 30px;
             border-radius: 4px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            cursor: pointer;
+            font-size: 0.85rem;
             transition: 0.3s;
         }
 
-        .submit-btn:hover {
+        .home-btn:hover {
             background: var(--prestige-gold);
         }
-
-        /* Summary Sidebar */
-        .order-summary {
-            background: white;
-            padding: 30px;
-            border-radius: 4px;
-            height: fit-content;
-            border-top: 4px solid var(--prestige-gold);
-        }
-
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .total-price {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--soft-gray);
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        /* Helper Classes */
-        .hidden { display: none; }
-        .animate-in { animation: slideUp 0.5s ease forwards; }
 
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .checkout-wrapper { grid-template-columns: 1fr; }
-            .order-summary { order: -1; }
         }
     </style>
 </head>
@@ -212,67 +142,24 @@
 
     <nav class="top-navbar">
         <a href="#" class="brand-logo">PRESTIGE FACE</a>
-        <a href="index.html" class="exit-btn">Exit Voting</a>
+        <a href="index.html" class="exit-btn">Back Home</a>
     </nav>
 
-    <div class="checkout-wrapper">
+    <div class="closed-wrapper">
         <main class="white-card">
+            <div class="status-icon">🔒</div>
             
-            <!-- STEP 1 -->
-            <div id="step1" class="animate-in">
-                <div class="section-header">
-                    <span class="step-title">Step 01: Secure Transfer</span>
-                </div>
-                <p style="margin-bottom: 20px; font-size: 0.95rem; color: #555;">
-               To vote for your desired  contestant, please make a transfer of <strong>₦20</strong> per vote or desired vote amount to the official account below.
-</p>
+            <div class="section-header">
+                <h1 class="status-title">Portal is Closed</h1>
+            </div>
+            
+            <p class="notice-text">
+                Voting for Prestige Face Nigeria has officially ended. Thank you to everyone who participated and supported their favorite contestants. 
+            </p>
 
-<div class="bank-details-container">
-    <p class="label-text">Bank Name</p>
-    <p class="value-text">Palmpay Digital Bank</p>
-
-    <p class="label-text">Account Number</p>
-    <div class="value-text">
-        <span id="accNum">9060260440</span>
-        <span class="copy-link" onclick="copyNum()">Copy Number</span>
+            <a href="index.html" class="home-btn">Return to Homepage</a>
+        </main>
     </div>
 
-    <p class="label-text">Account Name</p>
-    <p class="value-text" style="margin-bottom:0;">Dorcas Anuoluwa Emmanuel</p>
-</div>
-
-<button class="submit-btn" onclick="nextStep()">I Have Made Payment</button>
-</div>
-
-            <!-- STEP 2 -->
-            <div id="step2" class="hidden">
-                <div class="section-header">
-                    <span class="step-title">Step 02: Verification Details</span>
-                </div>
-                
-                <p>Please ensure you send the receipt to your contestant so as he/she can forward it to us for proper documentation</p>
-            </div>
-
-    <script>
-        function copyNum() {
-            const num = document.getElementById('accNum').innerText;
-            navigator.clipboard.writeText(num);
-            const link = document.querySelector('.copy-link');
-            link.innerText = "Copied!";
-            setTimeout(() => { link.innerText = "Copy Number"; }, 2000);
-        }
-
-        function nextStep() {
-            const s1 = document.getElementById('step1');
-            const s2 = document.getElementById('step2');
-            
-            s1.style.opacity = '0';
-            setTimeout(() => {
-                s1.classList.add('hidden');
-                s2.classList.remove('hidden');
-                s2.classList.add('animate-in');
-            }, 300);
-        }
-    </script>
 </body>
 </html>
