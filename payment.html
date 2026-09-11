@@ -3,163 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting Closed | Prestige Face Nigeria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Secure Payment | Prestige Face Nigeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ==========================================================================
+           COLOR PALETTE & DESIGN SYSTEM
+           ========================================================================== */
         :root {
-            --prestige-gold: #00A86B;
-            --prestige-gold-dark: #028e5b;
-            --deep-black: #0f0f0f;
-            --pure-white: #ffffff;
-            --soft-gray: #f4f4f4;
+            --primary: #111111;
+            --accent: #c5a880; /* High-Fashion Gold */
+            --light-bg: #f9f9f9;
+            --text-dark: #222222;
+            --text-light: #777777;
             --border-color: #e0e0e0;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Inter', sans-serif; 
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--soft-gray);
-            color: var(--deep-black);
+            background-color: var(--light-bg);
+            color: var(--text-dark);
             line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding-top: 80px; /* Space for fixed navbar */
         }
 
-        /* Professional Header */
+        /* Navigation Bar */
         .top-navbar {
-            background: white;
-            padding: 15px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            padding: 20px 40px;
+            z-index: 999;
         }
 
         .brand-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            color: #028e5b;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary);
             text-decoration: none;
         }
 
         .exit-btn {
             text-decoration: none;
-            color: #028e5b;
-            font-size: 0.8rem;
+            color: var(--text-light);
             font-weight: 600;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            padding: 8px 16px;
+            letter-spacing: 1px;
+            transition: var(--transition);
             border: 1px solid var(--border-color);
-            border-radius: 4px;
-            transition: all 0.3s;
+            padding: 8px 16px;
         }
 
         .exit-btn:hover {
-            background: #eee;
-            color: var(--deep-black);
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
-        /* Main Container */
-        .closed-wrapper {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
+        /* Main Container Framework */
+        .checkout-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .checkout-wrapper {
+            max-width: 550px;
             width: 100%;
+            margin: auto;
         }
 
-        /* Status Card */
         .white-card {
-            background: white;
-            border-radius: 4px;
-            padding: 50px 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
             text-align: center;
-            border-top: 4px solid var(--prestige-gold);
-            animation: slideUp 0.5s ease forwards;
+            border-top: 3px solid var(--accent);
+            position: relative;
         }
 
         .status-icon {
-            font-size: 3rem;
-            color: #d9534f; /* Muted Red Alert */
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
         }
 
         .section-header {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 2px solid var(--soft-gray);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .status-title {
-            font-size: 1.4rem;
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
-            color: var(--deep-black);
+            color: var(--primary);
         }
 
-        .notice-text {
+        .instruction-text {
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Bank Account Content Area */
+        .bank-details-container {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px 25px;
             margin-bottom: 30px;
-            font-size: 1rem;
-            color: #555;
+            text-align: left;
         }
 
-        .home-btn {
-            display: inline-block;
+        .label-text {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .value-text {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .value-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .copy-link {
+            color: var(--accent);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-link:hover {
+            color: var(--primary);
+        }
+
+        /* Action Buttons */
+        .submit-btn, .home-btn {
+            display: block;
+            width: 100%;
             text-decoration: none;
-            background: var(--deep-black);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 4px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px;
+            border: none;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
+            cursor: pointer;
             font-size: 0.85rem;
-            transition: 0.3s;
+            transition: var(--transition);
+            text-align: center;
         }
 
-        .home-btn:hover {
-            background: var(--prestige-gold);
+        .submit-btn:hover, .home-btn:hover {
+            background: var(--accent);
+        }
+
+        /* Step Logic Display Controls */
+        .hidden { 
+            display: none !important; 
+        }
+
+        .animate-in { 
+            animation: slideUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; 
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
+    <!-- Integrated Top Header Navigation Element -->
     <nav class="top-navbar">
-        <a href="#" class="brand-logo">PRESTIGE FACE</a>
-        <a href="index.html" class="exit-btn">Back Home</a>
+        <a href="index.html" class="brand-logo">PRESTIGE FACE</a>
+        <a href="index.html" class="exit-btn">Exit Voting</a>
     </nav>
 
-    <div class="closed-wrapper">
-        <main class="white-card">
-            <div class="status-icon">🔒</div>
-            
-            <div class="section-header">
-                <h1 class="status-title">Portal is Closed</h1>
-            </div>
-            
-            <p class="notice-text">
-                Voting for Prestige Face Nigeria has officially ended. Thank you to everyone who participated and supported their favorite contestants. 
-            </p>
+    <!-- Center Stage Container Block -->
+    <div class="checkout-container">
+        <div class="checkout-wrapper">
+            <main class="white-card">
+                <div class="status-icon">🔒</div>
 
-            <a href="index.html" class="home-btn">Return to Homepage</a>
-        </main>
+                <!-- STEP 1: Secure Direct Transfer Panel -->
+                <div id="step1" class="animate-in">
+                    <div class="section-header">
+                        <span class="step-title">Step 01: Secure Transfer</span>
+                    </div>
+                    <p class="instruction-text">
+                        To vote for your desired contestant, please make a transfer of <strong>₦20</strong> per vote or your total dynamic voting amount to the verified corporate account details below.
+                    </p>
+
+                    <div class="bank-details-container">
+                        <p class="label-text">Bank Name</p>
+                        <p class="value-text">Palmpay Digital Bank</p>
+
+                        <p class="label-text">Account Number</p>
+                        <div class="value-text">
+                            <span id="accNum">9060260440</span>
+                            <span class="copy-link" onclick="copyNum()">Copy Number</span>
+                        </div>
+
+                        <p class="label-text">Account Name</p>
+                        <p class="value-text">Dorcas Anuoluwa Emmanuel</p>
+                    </div>
+
+                    <button class="submit-btn" onclick="nextStep()">I Have Made Payment</button>
+                </div>
+
+                <!-- STEP 2: Client Verification Interface Panel -->
+                <div id="step2" class="hidden">
+                    <div class="section-header">
+                        <span class="step-title">Step 02: Verification Details</span>
+                    </div>
+                    
+                    <p class="instruction-text" style="line-height: 1.8; margin-bottom: 35px;">
+                        Payment initialized successfully. Please ensure you **forward your transactional receipt snapshot directly to your chosen contestant** so they can submit it to the administrative board for instant live standing updates.
+                    </p>
+                    
+                    <a href="index.html" class="home-btn">Return to Homepage</a>
+                </div>
+            </main>
+        </div>
     </div>
 
+    <!-- Interface Script Controller Block -->
+    <script>
+        // Copy System Handling Interface
+        function copyNum() {
+            const num = document.getElementById('accNum').innerText;
+            navigator.clipboard.writeText(num).then(() => {
+                const link = document.querySelector('.copy-link');
+                link.innerText = "Copied!";
+                setTimeout(() => { 
+                    link.innerText = "Copy Number"; 
+                }, 2000);
+            });
+        }
+
+        // Multistage Navigation Controller Logic
+        function nextStep() {
+            const s1 = document.getElementById('step1');
+            const s2 = document.getElementById('step2');
+            
+            s1.style.opacity = '0';
+            s1.style.transition = 'opacity 0.2s ease';
+            
+            setTimeout(() => {
+                s1.classList.add('hidden');
+                s2.classList.remove('hidden');
+                s2.classList.add('animate-in');
+            }, 200);
+        }
+    </script>
 </body>
 </html>
