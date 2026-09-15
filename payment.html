@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Payment | Prestige Face Nigeria</title>
+    <title>Voting Closed | Prestige Face Nigeria</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
-           COLOR PALETTE & DESIGN SYSTEM
+           COLOR PALETTE & DESIGN SYSTEM (Matches Prestige Luxury Branding)
            ========================================================================== */
         :root {
             --primary: #111111;
@@ -20,14 +20,14 @@
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Inter', sans-serif; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--light-bg);
             color: var(--text-dark);
             line-height: 1.6;
@@ -37,7 +37,7 @@
             padding-top: 80px; /* Space for fixed navbar */
         }
 
-        /* Navigation Bar */
+        /* Professional Header Navigation */
         .top-navbar {
             position: fixed;
             top: 0;
@@ -80,7 +80,7 @@
         }
 
         /* Main Container Framework */
-        .checkout-container {
+        .closed-container {
             flex: 1;
             display: flex;
             align-items: center;
@@ -88,26 +88,27 @@
             padding: 40px 20px;
         }
 
-        .checkout-wrapper {
+        .closed-wrapper {
             max-width: 550px;
             width: 100%;
             margin: auto;
         }
 
+        /* Status Card Display */
         .white-card {
             background: var(--white);
             border: 1px solid var(--border-color);
-            padding: 40px 30px;
+            padding: 50px 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.03);
             text-align: center;
             border-top: 3px solid var(--accent);
-            position: relative;
+            animation: slideUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
         }
 
         .status-icon {
             font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .section-header {
@@ -116,68 +117,24 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .step-title {
+        .status-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
             color: var(--primary);
         }
 
-        .instruction-text {
-            margin-bottom: 25px;
+        .notice-text {
+            margin-bottom: 35px;
             font-size: 0.95rem;
             color: var(--text-light);
-        }
-
-        /* Bank Account Content Area */
-        .bank-details-container {
-            background: var(--light-bg);
-            border: 1px solid var(--border-color);
-            padding: 20px 25px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .label-text {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 3px;
-        }
-
-        .value-text {
-            font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 18px;
-            color: var(--primary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .value-text:last-child {
-            margin-bottom: 0;
-        }
-
-        .copy-link {
-            color: var(--accent);
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-decoration: underline;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .copy-link:hover {
-            color: var(--primary);
+            line-height: 1.8;
         }
 
         /* Action Buttons */
-        .submit-btn, .home-btn {
+        .home-btn {
             display: block;
             width: 100%;
             text-decoration: none;
@@ -194,17 +151,8 @@
             text-align: center;
         }
 
-        .submit-btn:hover, .home-btn:hover {
+        .home-btn:hover {
             background: var(--accent);
-        }
-
-        /* Step Logic Display Controls */
-        .hidden { 
-            display: none !important; 
-        }
-
-        .animate-in { 
-            animation: slideUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; 
         }
 
         @keyframes slideUp {
@@ -215,88 +163,30 @@
 </head>
 <body>
 
-    <!-- Integrated Top Header Navigation Element -->
+    <!-- Top Header Navigation -->
     <nav class="top-navbar">
         <a href="index.html" class="brand-logo">PRESTIGE FACE</a>
-        <a href="index.html" class="exit-btn">Exit Voting</a>
+        <a href="index.html" class="exit-btn">Back Home</a>
     </nav>
 
     <!-- Center Stage Container Block -->
-    <div class="checkout-container">
-        <div class="checkout-wrapper">
+    <div class="closed-container">
+        <div class="closed-wrapper">
             <main class="white-card">
                 <div class="status-icon">🔒</div>
-
-                <!-- STEP 1: Secure Direct Transfer Panel -->
-                <div id="step1" class="animate-in">
-                    <div class="section-header">
-                        <span class="step-title">Step 01: Secure Transfer</span>
-                    </div>
-                    <p class="instruction-text">
-                        To vote for your desired contestant, please make a transfer of <strong>₦20</strong> per vote or your total dynamic voting amount to the verified corporate account details below.
-                    </p>
-
-                    <div class="bank-details-container">
-                        <p class="label-text">Bank Name</p>
-                        <p class="value-text">Palmpay Digital Bank</p>
-
-                        <p class="label-text">Account Number</p>
-                        <div class="value-text">
-                            <span id="accNum">9060260440</span>
-                            <span class="copy-link" onclick="copyNum()">Copy Number</span>
-                        </div>
-
-                        <p class="label-text">Account Name</p>
-                        <p class="value-text">Dorcas Anuoluwa Emmanuel</p>
-                    </div>
-
-                    <button class="submit-btn" onclick="nextStep()">I Have Made Payment</button>
+                
+                <div class="section-header">
+                    <h1 class="status-title">Portal is Closed</h1>
                 </div>
+                
+                <p class="notice-text">
+                    Voting for Prestige Face Nigeria has officially ended. Thank you to everyone who participated and supported their favorite contestants.
+                </p>
 
-                <!-- STEP 2: Client Verification Interface Panel -->
-                <div id="step2" class="hidden">
-                    <div class="section-header">
-                        <span class="step-title">Step 02: Verification Details</span>
-                    </div>
-                    
-                    <p class="instruction-text" style="line-height: 1.8; margin-bottom: 35px;">
-                        Payment initialized successfully. Please ensure you **forward your transactional receipt snapshot directly to your chosen contestant** so they can submit it to the administrative board for instant live standing updates.
-                    </p>
-                    
-                    <a href="index.html" class="home-btn">Return to Homepage</a>
-                </div>
+                <a href="index.html" class="home-btn">Return to Homepage</a>
             </main>
         </div>
     </div>
 
-    <!-- Interface Script Controller Block -->
-    <script>
-        // Copy System Handling Interface
-        function copyNum() {
-            const num = document.getElementById('accNum').innerText;
-            navigator.clipboard.writeText(num).then(() => {
-                const link = document.querySelector('.copy-link');
-                link.innerText = "Copied!";
-                setTimeout(() => { 
-                    link.innerText = "Copy Number"; 
-                }, 2000);
-            });
-        }
-
-        // Multistage Navigation Controller Logic
-        function nextStep() {
-            const s1 = document.getElementById('step1');
-            const s2 = document.getElementById('step2');
-            
-            s1.style.opacity = '0';
-            s1.style.transition = 'opacity 0.2s ease';
-            
-            setTimeout(() => {
-                s1.classList.add('hidden');
-                s2.classList.remove('hidden');
-                s2.classList.add('animate-in');
-            }, 200);
-        }
-    </script>
 </body>
 </html>
